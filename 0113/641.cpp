@@ -46,8 +46,7 @@ class MyCircularDeque {
 			if (isEmpty()) {
 				return false;
 			}
-			front 被设计在数组的开头，所以是 +1
-				front = (front + 1) % capacity;
+			front = (front + 1) % capacity;
 			return true;
 		}
 
@@ -56,7 +55,6 @@ class MyCircularDeque {
 			if (isEmpty()) {
 				return false;
 			}
-			// rear 被设计在数组的末尾，所以是 -1
 			rear = (rear - 1 + capacity) % capacity;
 			return true;
 		}
@@ -74,7 +72,6 @@ class MyCircularDeque {
 			if (isEmpty()) {
 				return -1;
 			}
-			// 当 rear 为 0 时防止数组越界
 			return arr[(rear - 1 + capacity) % capacity];
 		}
 
@@ -85,7 +82,6 @@ class MyCircularDeque {
 
 		/** Checks whether the circular deque is full or not. */
 		bool isFull() {
-			// 注意：这个设计是非常经典的做法
 			return (rear + 1) % capacity == front;
 		}
 };
