@@ -1,4 +1,4 @@
-# 【428-week 01】学习总结
+# 学习总结--数组，链表，队列
 
 ## 数组
 Array | -
@@ -37,7 +37,7 @@ delete | O(n)
 - 操作
 	- fill&emsp;以指定值填充容器
 	- swap&emsp;交换内容
-  
+ 
 ## 链表
 ``` cpp
 class LinkedList {
