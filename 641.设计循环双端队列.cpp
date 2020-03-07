@@ -11,16 +11,16 @@ private:
     vector<int> arr;
     int front;
     int rear;
-    
+
 public:
     /** Initialize your data structure here. Set the size of the deque to be k. */
     MyCircularDeque(int k) {
         capacity = k + 1;
+        arr.assign(capacity, 0);
         front = 0;
         rear = 0;
-        arr.assign(capacity, 0);
     }
-
+    
     /** Adds an item at the front of Deque. Return true if the operation is successful. */
     bool insertFront(int value) {
         if (isFull())

@@ -5,13 +5,6 @@
  */
 
 // @lc code=start
-/*
- * @lc app=leetcode.cn id=874 lang=cpp
- *
- * [874] 模拟行走机器人
- */
-
-// @lc code=start
 class Solution {
 private:
     map<int, vector<int>> m_map;
@@ -21,8 +14,15 @@ private:
     int m_direcion = 0; // 0北（y++） 1东（x++） 2南（y--） 3西（x--）
 public:
     void turn(int commands) {
-        if (commands == -1) { m_direcion++; }
-        else if (commands == -2) { m_direcion--;}
+        if (commands == -1) {
+            m_direcion++;
+        }
+        else if (commands == -2) {
+            m_direcion--;
+        }
+        else {
+            return;
+        }
         m_direcion = (m_direcion + 4) % 4;
     }
     
@@ -39,16 +39,24 @@ public:
     void move(int commands ,vector<vector<int>>& obstacles) {
         switch (m_direcion) {
             case 0 : 
-                while (commands-- and NoObstacle(m_x, m_y + 1)) m_y++; 
+                while (commands-- and NoObstacle(m_x, m_y + 1)) {
+                    m_y++; 
+                }
                 break;
             case 1 : 
-                while (commands-- and NoObstacle(m_x + 1, m_y)) m_x++; 
+                while (commands-- and NoObstacle(m_x + 1, m_y)) {
+                    m_x++; 
+                }
                 break;
             case 2 : 
-                while (commands-- and NoObstacle(m_x, m_y - 1)) m_y--; 
+                while (commands-- and NoObstacle(m_x, m_y - 1)) {
+                    m_y--; 
+                }
                 break;
             case 3 : 
-                while (commands-- and NoObstacle(m_x - 1, m_y)) m_x--; 
+                while (commands-- and NoObstacle(m_x - 1, m_y)) {
+                    m_x--; 
+                }
             default: break;
         } 
     }
@@ -79,6 +87,4 @@ public:
 };
 // @lc code=end
 
-
-// @lc code=end
 

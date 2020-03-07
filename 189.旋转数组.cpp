@@ -3,6 +3,8 @@
  *
  * [189] 旋转数组
  */
+
+// @lc code=start
 /* ----- 第一次提交 自己实现的overture 翻转函数
 class Solution {
 public:
@@ -21,8 +23,6 @@ public:
 };
 */
 // ----- 最终提交
-
-// @lc code=start
 class Solution {
 public:
     void rotate(vector<int>& nums, int k) {

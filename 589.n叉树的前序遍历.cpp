@@ -1,4 +1,4 @@
-//598. N叉树的前序遍历
+//589. N叉树的前序遍历
 /*
 // Definition for a Node.
 class Node {

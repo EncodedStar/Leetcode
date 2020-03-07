@@ -1,4 +1,10 @@
-//144. 二叉树的前序遍历
+/*
+ * @lc app=leetcode.cn id=144 lang=cpp
+ *
+ * [144] 二叉树的前序遍历
+ */
+
+// @lc code=start
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -8,7 +14,6 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
-
 // C++ 典型前序遍历模板
 class Solution {
 private:
@@ -24,3 +29,6 @@ public:
         return TraversalVal;
     }
 };
+
+// @lc code=end
+

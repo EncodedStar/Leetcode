@@ -14,13 +14,12 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
-// 递归的时候分析本身函数作用
 class Solution {
 public:
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
         if(root == NULL)
             return NULL;
-                    
+            
         if(root == p || root == q) 
             return root;
             
