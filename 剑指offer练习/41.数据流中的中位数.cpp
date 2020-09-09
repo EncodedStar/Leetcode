@@ -29,27 +29,38 @@ double findMedian() - 返回目前所有元素的中位数。
 class MedianFinder {
 public:
     /** initialize your data structure here. */
+    priority_queue<int,vector<int>,less<int>> leftQue; //大顶堆
+    priority_queue<int,vector<int>,greater<int>> rightQue; //小顶堆
     MedianFinder() {
-
     }
-    
     void addNum(int num) {
-        m_containers.push_back(num);
-        m_num++;
+         //左右数量相等,则取出右边的一个对象push进入左边的大顶堆
+         if(leftQue.size() == rightQue.size())
+         {
+            rightQue.push(num);
+            leftQue.push(rightQue.top());
+            rightQue.pop();   
+         }
+         //左边多一个,则取出左边的一个对象push进右边的小顶堆
+         else if(leftQue.size() == rightQue.size()+1)
+         {
+            leftQue.push(num);
+            rightQue.push(leftQue.top());
+            leftQue.pop(); 
+         }
     }
     
     double findMedian() {
-        m_containers.sort();
-        if ((m_num+1) % 2 == 0) {   // 奇数
-            return m_containers[(m_num+1)/2];
-        }else { //偶数
-            return (m_containers[(m_num+1)/2] + m_containers[(m_num+2)/2]) / 2.0;
+        double res = 0.0;
+        if(leftQue.size() == rightQue.size())
+        {
+            res = ((double)leftQue.top() + (double)rightQue.top())/2;
         }
+        else res = leftQue.top();
+        return res;
     }
-
-    vector<int> m_containers;
-    int m_num = -1;
 };
+
 
 /**
  * Your MedianFinder object will be instantiated and called as such:
