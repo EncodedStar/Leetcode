@@ -16,6 +16,16 @@
 class Solution {
 public:
     int majorityElement(vector<int>& nums) {
-
+        int re = nums[0];
+        int num = 1;
+        for (int i = 1; i < nums.size(); i++) {
+            if ( nums[i] == re) num++;
+            else num--;
+            if (num == -1) {
+                swap(re, nums[i]);
+                num = 1;   
+            }
+        }
+        return re;
     }
 };
